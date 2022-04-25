@@ -53,3 +53,20 @@ let capitalizedAnimals = animals.map(function(el){
 console.log('the end')
 
 // '{' after if statement
+
+
+
+
+function problemFive(){
+
+    let results = dishes.filter(function(el){
+        if(el.ingredients.includes('chickpea') ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+    
+    return results;
+}

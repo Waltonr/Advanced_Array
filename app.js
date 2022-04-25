@@ -190,7 +190,7 @@ let dishes = [
 // function problemFour(){
 
 //     let results = dishes.filter(function(el){
-//         if(dishes % 2 == 0){
+//         if(el.servings % 2 === 0){
 //             return true;
 //         }
 //         else{
@@ -211,22 +211,22 @@ let dishes = [
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
-function problemFive(){
+// function problemFive(){
 
-    let results = dishes.filter(function(el){
-        if(el.ingredients = 'chickpea' ){
-            return true;
-        }
-        else{
-            return false;
-        }
-    });
+//     let results = dishes.filter(function(el){
+//         if(el.ingredients.includes('chickpea') ){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     });
     
-    return results;
-}
+//     return results;
+// }
 
-let vegetarian = problemFive();
-console.log(vegetarian)
+// let vegetarian = problemFive();
+// console.log(vegetarian)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
@@ -253,8 +253,76 @@ console.log(vegetarian)
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
 
-//8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
+// function problemSeven(){
+
+//     let results = dishes.map(function(el){
+//         console.log(el);
+//         return el.cuisine + ' ' + el.name;
+    
+//     });
+
+//     return results;
+// }
+
+// let vegetarian = problemSeven();
+// console.log(vegetarian)
+
+
+
+
+
+//8. Create a function that will append the cuisine type to the start of the dish's name. 
+// Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to 
+// "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
+
+newArray = [ ]
+
+
+function problemEight(){
+
+    let newArray = dishes.map(function(el){
+        console.log(el);
+        return el.cuisine + ' ' + el.name;
+        
+    });
+
+    return newArray;
+}
+
+
+function problemEight2(callback){
+
+    let results = callback.filter(function(el){
+        if(el.includes ('vegetarian')){
+            return true;
+
+        }
+        else{
+            return false;
+        }
+
+        
+    });
+    return results;
+    
+}
+
+function doRoutine(callback){
+    callback()
+}
+
+
+doRoutine(problemEight)
+doRoutine(problemEight2)
+// let vegetarian = problemEight2(problemEight);
+
+// console.log(vegetarian)
+
+
+
+
+
 
 
 //BONUS
