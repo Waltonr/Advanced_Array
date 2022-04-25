@@ -271,53 +271,36 @@ let dishes = [
 
 
 
-//8. Create a function that will append the cuisine type to the start of the dish's name. 
+// 8. Create a function that will append the cuisine type to the start of the dish's name. 
 // Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to 
 // "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
-//Map, Filter
-
-newArray = [ ]
-
+// Map, Filter
 
 function problemEight(){
-
-    let newArray = dishes.map(function(el){
-        console.log(el);
+    let results = dishes.map(function(el){
         return el.cuisine + ' ' + el.name;
-        
     });
-
-    return newArray;
+    ;
 }
-
-
-function problemEight2(callback){
-
-    let results = callback.filter(function(el){
-        if(el.includes ('vegetarian')){
+function problemEight2(){
+    let results = dishes.filter(function(el){
+        if(el.cuisine === "Vegetarian"){
+            console.log(el);
             return true;
-
         }
         else{
             return false;
         }
-
-        
     });
     return results;
-    
 }
-
 function doRoutine(callback){
     callback()
 }
-
-
-doRoutine(problemEight)
-doRoutine(problemEight2)
-// let vegetarian = problemEight2(problemEight);
-
-// console.log(vegetarian)
+doRoutine(problemEight);
+doRoutine(problemEight2);
+let vegetarian2 = problemEight();
+console.log(vegetarian2)
 
 
 
@@ -331,8 +314,39 @@ doRoutine(problemEight2)
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
+// function problemNine(){
+
+//     let results = dishes.filter(function(el){
+//         if(el.ingredients.includes('tomato') || el.ingredients.includes('cheese') ){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     });
+    
+//     return results;
+// }
+
+// let vegetarian = problemNine();
+// console.log(vegetarian)
+
+
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+
+// function problemTen(){
+
+//     let sum = dishes.reduce(function(total, el){
+//         return total + el.servings;
+//     })
+//     return sum;
+// }
+
+// let vegetarian = problemTen();
+// console.log(vegetarian)
+
+
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
     
